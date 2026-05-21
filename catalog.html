@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Каталог мотоциклов | MotoShop</title>
+    <link rel="stylesheet" href="catalog.css">
+</head>
+<body>
+
+<header>
+    <div class="container header-flex">
+        <div class="logo">
+            <h1>MotoShop</h1>
+            <p>Мотоциклы в Нижнем Новгороде</p>
+        </div>
+        <nav class="nav-menu">
+            <ul>
+                <li><a href="index.html">Главная</a></li>
+                <li><a href="catalog.html" class="active">Каталог</a></li>
+                <li><a href="index.html#about">О нас</a></li>
+                <li><a href="index.html#advantages">Преимущества</a></li>
+                <li><a href="#contacts">Контакты</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<section class="page-title">
+    <div class="container">
+        <h1>🏍️ Наш каталог мотоциклов</h1>
+        <p>Выбери свой идеальный байк из более чем 12 моделей</p>
+    </div>
+</section>
+
+<div class="filter-section">
+    <div class="container filter-buttons" id="filterContainer">
+        <button class="filter-btn active" data-filter="all">Все модели</button>
+        <button class="filter-btn" data-filter="enduro">Эндуро</button>
+        <button class="filter-btn" data-filter="cruiser">Чоппер</button>
+        <button class="filter-btn" data-filter="sport">Спорт</button>
+        <button class="filter-btn" data-filter="pitbike">Питбайк</button>
+    </div>
+</div>
+
+<div class="container">
+    <div class="catalog-grid" id="catalogGrid"></div>
+</div>
+
+<section id="contacts" class="contacts">
+    <div class="container">
+        <h2 class="section-title">Наши контакты</h2>
+        <div class="contacts-flex">
+            <div class="contact-info">
+                <div class="contact-item">
+                    <span>📍</span>
+                    <span>Нижний Новгород, ул. Сергея Акимова, 15</span>
+                </div>
+                <div class="contact-item">
+                    <span>📞</span>
+                    <span>+7 986 726 85 75</span>
+                </div>
+                <div class="contact-item">
+                    <span>✉️</span>
+                    <span>den.10.10@motoshop-nn.ru</span>
+                </div>
+                <div class="contact-item">
+                    <span>⏰</span>
+                    <span>Ежедневно: 10:00 - 20:00</span>
+                </div>
+            </div>
+            <div class="social-links">
+                <h3 style="margin-bottom: 15px;">Мы в соцсетях:</h3>
+                <a href="#">Telegram</a>
+                <a href="#">ВКонтакте</a>
+                <div class="map-placeholder">
+                    🗺️ Как проехать: остановка "Улица Сергея Акимова", рядом ТЦ "Седьмое небо". Есть парковка.
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<footer>
+    <div class="container">
+        <p>© 2025 MotoShop - магазин мотоциклов в Нижнем Новгороде. Все права защищены.</p>
+    </div>
+</footer>
+
+<script>
+    const motorcycles = [
+        { name: "Kayo K6 250", type: "enduro", engine: "250 см³", power: "28 л.с.", price: 189000, img: "https://via.placeholder.com/400x200?text=Kayo+K6+250", badge: "Хит продаж" },
+        { name: "Motoland XR 300", type: "enduro", engine: "300 см³", power: "32 л.с.", price: 215000, img: "https://via.placeholder.com/400x200?text=Motoland+XR+300", badge: "Мощный" },
+        { name: "KEWS Cruiser 400", type: "cruiser", engine: "400 см³", power: "35 л.с.", price: 320000, img: "https://via.placeholder.com/400x200?text=KEWS+Cruiser+400", badge: "Стильный" },
+        { name: "Ataki Retro 250", type: "cruiser", engine: "250 см³", power: "22 л.с.", price: 245000, img: "https://via.placeholder.com/400x200?text=Ataki+Retro+250", badge: "Классика" },
+        { name: "BSE Sport 200", type: "sport", engine: "200 см³", power: "25 л.с.", price: 175000, img: "https://via.placeholder.com/400x200?text=BSE+Sport+200", badge: "Для новичков" },
+        { name: "BRZ R 250", type: "sport", engine: "250 см³", power: "30 л.с.", price: 199000, img: "https://via.placeholder.com/400x200?text=BRZ+R+250", badge: "Гоночный" },
+        { name: "JHL Enduro 450", type: "enduro", engine: "450 см³", power: "45 л.с.", price: 350000, img: "https://via.placeholder.com/400x200?text=JHL+Enduro+450", badge: "Профессионалам" },
+        { name: "Progasi Pit 150", type: "pitbike", engine: "150 см³", power: "15 л.с.", price: 89000, img: "https://via.placeholder.com/400x200?text=Progasi+Pit+150", badge: "Для парков" },
+        { name: "Kayo T4 125", type: "pitbike", engine: "125 см³", power: "12 л.с.", price: 75000, img: "https://via.placeholder.com/400x200?text=Kayo+T4+125", badge: "Бюджетный" },
+        { name: "Motoland Cruiser 500", type: "cruiser", engine: "500 см³", power: "48 л.с.", price: 420000, img: "https://via.placeholder.com/400x200?text=Motoland+Cruiser+500", badge: "Премиум" },
+        { name: "KEWS Enduro 250", type: "enduro", engine: "250 см³", power: "27 л.с.", price: 195000, img: "https://via.placeholder.com/400x200?text=KEWS+Enduro+250", badge: "Надёжный" },
+        { name: "BRZ Pro 300", type: "sport", engine: "300 см³", power: "38 л.с.", price: 265000, img: "https://via.placeholder.com/400x200?text=BRZ+Pro+300", badge: "Спорт" }
+    ];
+
+    function renderCards(filterType = "all") {
+        const grid = document.getElementById("catalogGrid");
+        if (!grid) return;
+
+        const filtered = filterType === "all" ? motorcycles : motorcycles.filter(bike => bike.type === filterType);
+
+        if (filtered.length === 0) {
+            grid.innerHTML = `<div style="grid-column:1/-1; text-align:center; padding: 50px;">😢 Нет мотоциклов в этой категории</div>`;
+            return;
+        }
+
+        grid.innerHTML = filtered.map(bike => {
+            const formattedPrice = bike.price.toLocaleString('ru-RU');
+            return `
+                <div class="motorcycle-card">
+                    <div class="card-img" style="background-image: url('${bike.img}'); background-size: cover; background-position: center;">
+                        <div class="badge">${bike.badge}</div>
+                    </div>
+                    <div class="card-content">
+                        <h3>${bike.name}</h3>
+                        <div class="engine">${bike.engine} • ${bike.power}</div>
+                        <div class="specs">
+                            <span>⚡ ${bike.power}</span>
+                        </div>
+                        <div class="price">${formattedPrice} ₽</div>
+                        <button class="card-btn" onclick="alert('Спасибо! Менеджер свяжется с вами по мотоциклу ${bike.name}')">Запросить цену</button>
+                    </div>
+                </div>
+            `;
+        }).join("");
+    }
+
+    function setupFilters() {
+        const buttons = document.querySelectorAll(".filter-btn");
+        buttons.forEach(btn => {
+            btn.addEventListener("click", () => {
+                const filter = btn.getAttribute("data-filter");
+                buttons.forEach(b => b.classList.remove("active"));
+                btn.classList.add("active");
+                renderCards(filter);
+            });
+        });
+    }
+
+    document.addEventListener("DOMContentLoaded", () => {
+        renderCards("all");
+        setupFilters();
+    });
+</script>
+</body>
+</html>
